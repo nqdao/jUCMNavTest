@@ -10,8 +10,10 @@ import grl.ElementLink;
 import grl.EvaluationStrategy;
 import grl.GRLGraph;
 import grl.GRLNode;
+import grl.GrlFactory;
 import grl.IntentionalElementRef;
 import grl.StrategiesGroup;
+import grl.impl.GrlFactoryImpl;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -166,30 +168,35 @@ public class test {
 
 
 	}
+	
+	public void verifyBindings() {
+	        for (Iterator iter = urnspec.getUrndef().getSpecDiagrams().iterator(); iter.hasNext();) {
+	            IURNDiagram g = (IURNDiagram) iter.next();
+	            if (g instanceof GRLGraph) {
+	                GRLGraph graph = (GRLGraph) g;
+
+	                for (Iterator iter2 = graph.getContRefs().iterator(); iter2.hasNext();) {
+	                    ActorRef actor = (ActorRef) iter2.next();
+	                    assertEquals("ActorRef " + actor.toString() + " is not properly bound.", ParentFinder.getPossibleParent(actor), actor.getParent()); //$NON-NLS-1$ //$NON-NLS-2$
+
+	                }
+	                for (Iterator iter2 = graph.getNodes().iterator(); iter2.hasNext();) {
+	                    GRLNode gn = (GRLNode) iter2.next();
+	                    assertEquals("GRLNode " + gn.toString() + " is not properly bound.", ParentFinder.getPossibleParent(gn), gn.getContRef()); //$NON-NLS-1$ //$NON-NLS-2$
+	                }
+	            }
+	        }
+	    }
 
 	@Test
 	public void test1() {
+		GrlFactory factory = GrlFactoryImpl.init();
+		strategy = factory.createEvaluationStrategy();
+		strategy.setGrlspec(urnspec.getGrlspec());
 		algo = new FeatureModelStrategyAlgorithm();
 		algo.autoSelectAllMandatoryFeatures(strategy);
 	}
 
 	
-    public void verifyBindings() {
-        for (Iterator iter = urnspec.getUrndef().getSpecDiagrams().iterator(); iter.hasNext();) {
-            IURNDiagram g = (IURNDiagram) iter.next();
-            if (g instanceof GRLGraph) {
-                GRLGraph graph = (GRLGraph) g;
-
-                for (Iterator iter2 = graph.getContRefs().iterator(); iter2.hasNext();) {
-                    ActorRef actor = (ActorRef) iter2.next();
-                    assertEquals("ActorRef " + actor.toString() + " is not properly bound.", ParentFinder.getPossibleParent(actor), actor.getParent()); //$NON-NLS-1$ //$NON-NLS-2$
-
-                }
-                for (Iterator iter2 = graph.getNodes().iterator(); iter2.hasNext();) {
-                    GRLNode gn = (GRLNode) iter2.next();
-                    assertEquals("GRLNode " + gn.toString() + " is not properly bound.", ParentFinder.getPossibleParent(gn), gn.getContRef()); //$NON-NLS-1$ //$NON-NLS-2$
-                }
-            }
-        }
-    }
+   
 }
