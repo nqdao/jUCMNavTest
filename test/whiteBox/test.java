@@ -1,6 +1,7 @@
 package whiteBox;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.util.Iterator;
 
 import grl.ActorRef;
@@ -36,9 +37,10 @@ import ucm.map.UCMmap;
 import urn.URNlink;
 import urn.URNspec;
 import urncore.IURNDiagram;
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
 
-public class test extends TestCase {
+
+public class test {
 	private UCMNavMultiPageEditor editor;
     private CommandStack cs;
 
@@ -62,31 +64,32 @@ public class test extends TestCase {
     private boolean testBindings;
     
 	private FeatureModelStrategyAlgorithm algo;
-	
-	public test(String name) {
-		super(name);
-	}
 
 	@Before
-	protected void setUp() throws Exception {
-		super.setUp();
+	public void setUp() throws Exception {
+		//super.setUp();
 
         testBindings = true;
         IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-        IProject testproject = workspaceRoot.getProject("jUCMNav-GRL-tests"); //$NON-NLS-1$
-        if (!testproject.exists())
+        
+        IProject testproject = workspaceRoot.getProject("jUCMNavTest"); //$NON-NLS-1$
+        if (!testproject.exists()) {
+        	System.out.println("can't find jUCMNavTest");
             testproject.create(null);
+        }
 
-        if (!testproject.isOpen())
+        if (!testproject.isOpen()) {
             testproject.open(null);
-
-        IFile testfile = testproject.getFile("jUCMNav-GRL-test.jucm"); //$NON-NLS-1$
-
+        }
+        IFile testfile = testproject.getFile("elevator.jucm"); //$NON-NLS-1$
+        //IFile testfile = (IFile) new File("C:\\Users\\Quang\\elevator.jucm");
         // start with clean file
-        if (testfile.exists())
-            testfile.delete(true, false, null);
-
-        testfile.create(new ByteArrayInputStream("".getBytes()), false, null); //$NON-NLS-1$
+        if (!testfile.exists()) {
+            //testfile.delete(true, false, null);
+        	System.out.println("can't find elevator");
+        }
+        System.out.println("found elevator");
+        //testfile.create(new ByteArrayInputStream("".getBytes()), false, null); //$NON-NLS-1$
 
         IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
         IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(testfile.getName());
@@ -119,9 +122,9 @@ public class test extends TestCase {
 	}
 
 	@After
-	protected void tearDown() throws Exception {
-		super.tearDown();
-
+	public void tearDown() throws Exception {
+		//super.tearDown();
+		
         editor.doSave(null);
 
         // Verify the Actor References binding and executing undo/redo
