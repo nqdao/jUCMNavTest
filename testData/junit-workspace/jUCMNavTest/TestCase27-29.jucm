@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Omar" created="November 12, 2014 11:12:34 PM EST" modified="November 15, 2014 7:03:14 PM EST" specVersion="158" urnVersion="1.27" nextGlobalID="209">
+  <ucmspec>
+    <scenarioGroups name="ScenarioGroup6" id="6">
+      <scenarios name="ScenarioDef7" id="7"/>
+    </scenarioGroups>
+  </ucmspec>
+  <grlspec>
+    <intElements xsi:type="fm:Feature" name="Optional1" id="29" linksDest="55 56" linksSrc="51" type="Task" refs="43">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Root" id="31" linksDest="51 52 53" type="Task" refs="44">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Optional3" id="33" linksDest="57" linksSrc="53" type="Task" refs="41">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="And1" id="35" linksSrc="55" type="Task" refs="42">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Optional2" id="37" linksSrc="52" type="Task" refs="40">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="And2" id="45" linksSrc="56" type="Task" refs="46">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="And3" id="47" linksSrc="57" type="Task" refs="48">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <links xsi:type="fm:OptionalFMLink" name="Optional51" id="51" refs="//@urndef/@specDiagrams.0/@connections.0" dest="31" src="29" quantitativeContribution="100"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional52" id="52" refs="//@urndef/@specDiagrams.0/@connections.1" dest="31" src="37" quantitativeContribution="100"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional53" id="53" refs="//@urndef/@specDiagrams.0/@connections.2" dest="31" src="33" quantitativeContribution="100"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition55" id="55" refs="//@urndef/@specDiagrams.0/@connections.3" dest="29" src="35"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition56" id="56" refs="//@urndef/@specDiagrams.0/@connections.4" dest="29" src="45"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition57" id="57" refs="//@urndef/@specDiagrams.0/@connections.5" dest="33" src="47"/>
+    <groups name="StrategiesGroup4" id="4" strategies="5"/>
+    <strategies name="EvaluationStrategy5" id="5" author="Omar" group="4">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="35">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="33">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <strategies name="EvaluationStrategy60" id="60"/>
+    <strategies name="EvaluationStrategy63" id="63"/>
+    <strategies name="EvaluationStrategy66" id="66"/>
+    <strategies name="EvaluationStrategy69" id="69"/>
+    <strategies name="EvaluationStrategy72" id="72"/>
+    <strategies name="EvaluationStrategy75" id="75"/>
+    <strategies name="EvaluationStrategy78" id="78"/>
+    <strategies name="EvaluationStrategy81" id="81"/>
+    <strategies name="EvaluationStrategy84" id="84"/>
+    <strategies name="EvaluationStrategy87" id="87"/>
+    <strategies name="EvaluationStrategy90" id="90"/>
+    <strategies name="EvaluationStrategy93" id="93"/>
+    <strategies name="EvaluationStrategy96" id="96"/>
+    <strategies name="EvaluationStrategy99" id="99"/>
+    <strategies name="EvaluationStrategy102" id="102"/>
+    <strategies name="EvaluationStrategy105" id="105"/>
+    <strategies name="EvaluationStrategy108" id="108"/>
+    <strategies name="EvaluationStrategy111" id="111"/>
+    <strategies name="EvaluationStrategy114" id="114"/>
+    <strategies name="EvaluationStrategy117" id="117"/>
+    <strategies name="EvaluationStrategy120" id="120"/>
+    <strategies name="EvaluationStrategy123" id="123"/>
+    <strategies name="EvaluationStrategy126" id="126"/>
+    <strategies name="EvaluationStrategy129" id="129"/>
+    <strategies name="EvaluationStrategy132" id="132"/>
+    <strategies name="EvaluationStrategy135" id="135"/>
+    <strategies name="EvaluationStrategy138" id="138"/>
+    <strategies name="EvaluationStrategy141" id="141"/>
+    <strategies name="EvaluationStrategy144" id="144"/>
+    <strategies name="EvaluationStrategy147" id="147"/>
+    <strategies name="EvaluationStrategy150" id="150"/>
+    <strategies name="EvaluationStrategy153" id="153"/>
+    <strategies name="EvaluationStrategy156" id="156"/>
+    <strategies name="EvaluationStrategy159" id="159"/>
+    <strategies name="EvaluationStrategy162" id="162"/>
+    <strategies name="EvaluationStrategy165" id="165"/>
+    <strategies name="EvaluationStrategy168" id="168"/>
+    <strategies name="EvaluationStrategy171" id="171"/>
+    <strategies name="EvaluationStrategy174" id="174"/>
+    <strategies name="EvaluationStrategy177" id="177"/>
+    <strategies name="EvaluationStrategy180" id="180"/>
+    <strategies name="EvaluationStrategy183" id="183"/>
+    <strategies name="EvaluationStrategy186" id="186"/>
+    <strategies name="EvaluationStrategy189" id="189"/>
+    <strategies name="EvaluationStrategy192" id="192"/>
+    <strategies name="EvaluationStrategy195" id="195"/>
+    <strategies name="EvaluationStrategy198" id="198"/>
+    <strategies name="EvaluationStrategy201" id="201"/>
+    <strategies name="EvaluationStrategy204" id="204"/>
+    <strategies name="EvaluationStrategy207" id="207"/>
+    <strategies/>
+    <impactModel/>
+    <indicatorGroup name="Time" id="8" isRedesignCategory="true"/>
+    <indicatorGroup name="Cost" id="9" isRedesignCategory="true"/>
+    <indicatorGroup name="Quality" id="10" isRedesignCategory="true"/>
+    <indicatorGroup name="Flexibility" id="11" isRedesignCategory="true"/>
+    <featureModel/>
+  </grlspec>
+  <urndef>
+    <specDiagrams xsi:type="fm:FeatureDiagram" name="FeatureDiagram3" id="3">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef40" id="40" x="593" y="229" succ="//@urndef/@specDiagrams.0/@connections.1" def="37">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef41" id="41" x="715" y="231" succ="//@urndef/@specDiagrams.0/@connections.2" pred="//@urndef/@specDiagrams.0/@connections.5" def="33">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef42" id="42" x="386" y="383" succ="//@urndef/@specDiagrams.0/@connections.3" def="35">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef43" id="43" x="468" y="230" succ="//@urndef/@specDiagrams.0/@connections.0" pred="//@urndef/@specDiagrams.0/@connections.3 //@urndef/@specDiagrams.0/@connections.4" def="29">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef44" id="44" x="558" y="104" pred="//@urndef/@specDiagrams.0/@connections.0 //@urndef/@specDiagrams.0/@connections.1 //@urndef/@specDiagrams.0/@connections.2" def="31">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef46" id="46" x="533" y="382" succ="//@urndef/@specDiagrams.0/@connections.4" def="45">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef48" id="48" x="732" y="381" succ="//@urndef/@specDiagrams.0/@connections.5" def="47">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <connections xsi:type="grl:LinkRef" source="43" target="44" link="51">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="40" target="44" link="52">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="41" target="44" link="53">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="42" target="43" link="55"/>
+      <connections xsi:type="grl:LinkRef" source="46" target="43" link="56"/>
+      <connections xsi:type="grl:LinkRef" source="48" target="41" link="57"/>
+    </specDiagrams>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph2" id="2"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph59" id="59"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph62" id="62"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph65" id="65"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph68" id="68"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph71" id="71"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph74" id="74"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph77" id="77"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph80" id="80"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph83" id="83"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph86" id="86"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph89" id="89"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph92" id="92"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph95" id="95"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph98" id="98"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph101" id="101"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph104" id="104"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph107" id="107"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph110" id="110"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph113" id="113"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph116" id="116"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph119" id="119"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph122" id="122"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph125" id="125"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph128" id="128"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph131" id="131"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph134" id="134"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph137" id="137"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph140" id="140"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph143" id="143"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph146" id="146"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph149" id="149"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph152" id="152"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph155" id="155"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph158" id="158"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph161" id="161"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph164" id="164"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph167" id="167"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph170" id="170"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph173" id="173"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph176" id="176"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph179" id="179"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph182" id="182"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph185" id="185"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph188" id="188"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph191" id="191"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph194" id="194"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph197" id="197"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph200" id="200"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph203" id="203"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph206" id="206"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph209" id="209"/>
+  </urndef>
+  <metadata name="_Use0to100EvaluationRange" value="false"/>
+</urn:URNspec>
