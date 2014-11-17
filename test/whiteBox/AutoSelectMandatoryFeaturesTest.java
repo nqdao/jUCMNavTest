@@ -125,18 +125,98 @@ public class AutoSelectMandatoryFeaturesTest {
 
 	@Test	
 	public void test1() {
-		String testFile = "test.jucm";
+		String testFile = "test1.jucm";
 		try {
 			setUpTest(testFile);
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail("exception in setup");
 		}
+		assertTrue(StrategyEvaluationPreferences.getAutoSelectMandatoryFeatures());
+		int evalResult;
 		GrlFactory factory = GrlFactoryImpl.init();
+		HashMap eval = new HashMap();
 		strategy = factory.createEvaluationStrategy();
+		EvaluationStrategyManager em = EvaluationStrategyManager.getInstance(editor);
+		
+		Evaluation notSelected = factory.createEvaluation();
+		Evaluation selected = factory.createEvaluation();
+		notSelected.setEvaluation(0);
+		selected.setEvaluation(100);
+		
+		strategy.setGrlspec(urnspec.getGrlspec());
+		
+		List<Feature> features = strategy.getGrlspec().getIntElements();
+		Iterator it = features.iterator();
+		while (it.hasNext()) {
+			IntentionalElement element = (IntentionalElement) it.next();
+			eval.put(element, selected);
+			
+		}
+		
 		algo = new FeatureModelStrategyAlgorithm();
+		algo.clearAllAutoSelectedFeatures(strategy);
 		algo.autoSelectAllMandatoryFeatures(strategy);
-		List<IntentionalElement> features = strategy.getGrlspec().getIntElements();
+		algo.init(strategy, eval);
+		
+		em.setStrategy(strategy);
+		
+		Iterator itElement = features.iterator();
+		while (itElement.hasNext()) {
+			IntentionalElement element = (IntentionalElement) itElement.next();
+			if (element instanceof Feature) {
+				Iterator itLink = element.getLinksDest().iterator();
+				while (itLink.hasNext()) {
+					ElementLink link = (ElementLink) itLink.next();
+					IntentionalElement child = (IntentionalElement) link.getSrc();
+					if (child instanceof Feature) {
+						if (link instanceof MandatoryFMLink || (link instanceof Decomposition && element.getDecompositionType() == DecompositionType.AND_LITERAL)) {
+							assertTrue(FeatureUtil.checkSelectionStatus((Feature) child, true));
+							assertTrue(FeatureUtil.checkSelectionStatus((Feature) element, true));
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@Test
+	public void test2() {
+		String testFile = "test1.jucm";
+		try {
+			setUpTest(testFile);
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail("exception in setup");
+		}
+		int evalResult;
+		GrlFactory factory = GrlFactoryImpl.init();
+		HashMap eval = new HashMap();
+		strategy = factory.createEvaluationStrategy();
+		EvaluationStrategyManager em = EvaluationStrategyManager.getInstance(editor);
+		
+		Evaluation notSelected = factory.createEvaluation();
+		Evaluation selected = factory.createEvaluation();
+		notSelected.setEvaluation(0);
+		selected.setEvaluation(100);
+		
+		strategy.setGrlspec(urnspec.getGrlspec());
+		
+		List<Feature> features = strategy.getGrlspec().getIntElements();
+		Iterator it = features.iterator();
+		while (it.hasNext()) {
+			IntentionalElement element = (IntentionalElement) it.next();
+			eval.put(element, selected);
+			
+		}
+		
+		algo = new FeatureModelStrategyAlgorithm();
+		algo.clearAllAutoSelectedFeatures(strategy);
+		algo.autoSelectAllMandatoryFeatures(strategy);
+		algo.init(strategy, eval);
+		
+		em.setStrategy(strategy);
+		
 		Iterator itElement = features.iterator();
 		while (itElement.hasNext()) {
 			IntentionalElement element = (IntentionalElement) itElement.next();
@@ -197,6 +277,9 @@ public class AutoSelectMandatoryFeaturesTest {
 		graph = ((CreateGrlGraphCommand) cmd).getDiagram();
 		assertTrue("Can't execute CreateGrlGraphCommand.", cmd.canExecute()); //$NON-NLS-1$
 		cs.execute(cmd);
+		StrategyEvaluationPreferences.getPreferenceStore().setValue(StrategyEvaluationPreferences.PREF_ALGORITHM, StrategyEvaluationPreferences.FEATURE_MODEL_ALGORITHM + "");
+		StrategyEvaluationPreferences.getPreferenceStore().setValue(StrategyEvaluationPreferences.PREF_TOLERANCE, 0);
+		StrategyEvaluationPreferences.getPreferenceStore().setValue(StrategyEvaluationPreferences.PREF_AUTOSELECTMANDATORYFEATURES, true);
 		// Set the preferences for deleting the references to ALWAYS
 		DeletePreferences.getPreferenceStore().setValue(
 				DeletePreferences.PREF_DELDEFINITION,
