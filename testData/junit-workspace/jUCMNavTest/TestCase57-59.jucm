@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Omar" created="November 13, 2014 1:22:52 AM EST" modified="November 15, 2014 7:04:07 PM EST" specVersion="111" urnVersion="1.27" nextGlobalID="140">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Omar" created="November 13, 2014 1:22:52 AM EST" modified="November 18, 2014 12:33:27 AM EST" specVersion="57" urnVersion="1.27" nextGlobalID="86">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup6" id="6">
       <scenarios name="ScenarioDef7" id="7"/>
@@ -54,24 +54,6 @@
     <strategies name="EvaluationStrategy78" id="78"/>
     <strategies name="EvaluationStrategy81" id="81"/>
     <strategies name="EvaluationStrategy84" id="84"/>
-    <strategies name="EvaluationStrategy87" id="87"/>
-    <strategies name="EvaluationStrategy90" id="90"/>
-    <strategies name="EvaluationStrategy93" id="93"/>
-    <strategies name="EvaluationStrategy96" id="96"/>
-    <strategies name="EvaluationStrategy99" id="99"/>
-    <strategies name="EvaluationStrategy102" id="102"/>
-    <strategies name="EvaluationStrategy105" id="105"/>
-    <strategies name="EvaluationStrategy108" id="108"/>
-    <strategies name="EvaluationStrategy111" id="111"/>
-    <strategies name="EvaluationStrategy114" id="114"/>
-    <strategies name="EvaluationStrategy117" id="117"/>
-    <strategies name="EvaluationStrategy120" id="120"/>
-    <strategies name="EvaluationStrategy123" id="123"/>
-    <strategies name="EvaluationStrategy126" id="126"/>
-    <strategies name="EvaluationStrategy129" id="129"/>
-    <strategies name="EvaluationStrategy132" id="132"/>
-    <strategies name="EvaluationStrategy135" id="135"/>
-    <strategies name="EvaluationStrategy138" id="138"/>
     <strategies/>
     <impactModel/>
     <indicatorGroup name="Time" id="8" isRedesignCategory="true"/>
@@ -139,24 +121,6 @@
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph80" id="80"/>
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph83" id="83"/>
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph86" id="86"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph89" id="89"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph92" id="92"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph95" id="95"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph98" id="98"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph101" id="101"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph104" id="104"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph107" id="107"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph110" id="110"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph113" id="113"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph116" id="116"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph119" id="119"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph122" id="122"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph125" id="125"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph128" id="128"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph131" id="131"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph134" id="134"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph137" id="137"/>
-    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph140" id="140"/>
   </urndef>
   <metadata name="_Use0to100EvaluationRange" value="false"/>
 </urn:URNspec>
