@@ -122,7 +122,11 @@ public class AutoSelectMandatoryFeaturesTest {
 		editor.doSave(null);
 		editor.closeEditor(false);
 	}
-
+	
+	/*
+	 * test case with empty diagram
+	 * expected result: nothing selected
+	 */
 	@Test	
 	public void test1() {
 		String testFile = "test1.jucm";
@@ -165,24 +169,20 @@ public class AutoSelectMandatoryFeaturesTest {
 		while (itElement.hasNext()) {
 			IntentionalElement element = (IntentionalElement) itElement.next();
 			if (element instanceof Feature) {
-				Iterator itLink = element.getLinksDest().iterator();
-				while (itLink.hasNext()) {
-					ElementLink link = (ElementLink) itLink.next();
-					IntentionalElement child = (IntentionalElement) link.getSrc();
-					if (child instanceof Feature) {
-						if (link instanceof MandatoryFMLink || (link instanceof Decomposition && element.getDecompositionType() == DecompositionType.AND_LITERAL)) {
-							assertTrue(FeatureUtil.checkSelectionStatus((Feature) child, true));
-							assertTrue(FeatureUtil.checkSelectionStatus((Feature) element, true));
-						}
-					}
-				}
+				assertFalse(FeatureUtil.checkSelectionStatus((Feature) element, true));
 			}
 		}
 	}
 	
+	/*
+	 * test case with a non-feature intentional element
+	 * expected result:
+	 * - selected elements: root, child
+	 * - not selected element: belief
+	 */
 	@Test
 	public void test2() {
-		String testFile = "test1.jucm";
+		String testFile = "test2.jucm";
 		try {
 			setUpTest(testFile);
 		} catch (Exception e) {
@@ -216,24 +216,85 @@ public class AutoSelectMandatoryFeaturesTest {
 		algo.init(strategy, eval);
 		
 		em.setStrategy(strategy);
+		List<Feature> rootFeatures = FeatureUtil.getRootFeatures(strategy.getGrlspec());
+		Iterator root = rootFeatures.iterator();
+		while(root.hasNext()) {
+			Feature feature = (Feature) root.next();
+			assertTrue(feature.getName().equals("root"));
+		}
+		
 		
 		Iterator itElement = features.iterator();
 		while (itElement.hasNext()) {
 			IntentionalElement element = (IntentionalElement) itElement.next();
 			if (element instanceof Feature) {
-				Iterator itLink = element.getLinksDest().iterator();
-				while (itLink.hasNext()) {
-					ElementLink link = (ElementLink) itLink.next();
-					IntentionalElement child = (IntentionalElement) link.getSrc();
-					if (child instanceof Feature) {
-						if (link instanceof MandatoryFMLink || (link instanceof Decomposition && element.getDecompositionType() == DecompositionType.AND_LITERAL)) {
-							assertTrue(FeatureUtil.checkSelectionStatus((Feature) child, true));
-							assertTrue(FeatureUtil.checkSelectionStatus((Feature) element, true));
-						}
-					}
+				assertTrue(FeatureUtil.checkSelectionStatus((Feature) element, true));
+			} else {
+				assertEquals(element.getDescription(), "non-Feature");
+			}
+		}
+	}
+	
+	/*
+	 * test case with various decompositions and multiple root features
+	 * expected result:
+	 *  - selected features: root1, child1Root1, Xor2, child2Root1, And1, And2, child1Root2, Or3
+	 *  - not selected features: Xor1, Or1, Or2, child2Root2, Optional1, Optional2
+	 */
+	@Test
+	public void test3() {
+		String testFile = "test3.jucm";
+		try {
+			setUpTest(testFile);
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail("exception in setup");
+		}
+		int evalResult;
+		GrlFactory factory = GrlFactoryImpl.init();
+		HashMap eval = new HashMap();
+		strategy = factory.createEvaluationStrategy();
+		EvaluationStrategyManager em = EvaluationStrategyManager.getInstance(editor);
+		
+		Evaluation notSelected = factory.createEvaluation();
+		Evaluation selected = factory.createEvaluation();
+		notSelected.setEvaluation(0);
+		selected.setEvaluation(100);
+		
+		strategy.setGrlspec(urnspec.getGrlspec());
+		
+		List<Feature> features = strategy.getGrlspec().getIntElements();
+		Iterator it = features.iterator();
+		while (it.hasNext()) {
+			IntentionalElement element = (IntentionalElement) it.next();
+			eval.put(element, selected);
+			
+		}
+		
+		algo = new FeatureModelStrategyAlgorithm();
+		algo.clearAllAutoSelectedFeatures(strategy);
+		algo.autoSelectAllMandatoryFeatures(strategy);
+		algo.init(strategy, eval);
+		
+		em.setStrategy(strategy);
+		Iterator itElement = features.iterator();
+		while (itElement.hasNext()) {
+			IntentionalElement element = (IntentionalElement) itElement.next();
+			if (element instanceof Feature) {
+				if(((Feature) element).getName().equals("Xor1")
+						|| ((Feature) element).getName().equals("Or1")
+						|| ((Feature) element).getName().equals("Or2")
+						|| ((Feature) element).getName().equals("child2Root2")
+						|| ((Feature) element).getName().equals("Optional1")
+						|| ((Feature) element).getName().equals("Optional2")) {
+					assertFalse(element.getName(), FeatureUtil.checkSelectionStatus((Feature) element, true));
+				}
+				else {
+					assertTrue(element.getName(), FeatureUtil.checkSelectionStatus((Feature) element, true));
 				}
 			}
 		}
+		
 	}
 	
 	public void setUpTest(String testFileName) throws Exception {
