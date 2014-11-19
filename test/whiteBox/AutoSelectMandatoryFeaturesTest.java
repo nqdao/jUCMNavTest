@@ -126,6 +126,7 @@ public class AutoSelectMandatoryFeaturesTest {
 	/*
 	 * test case with empty diagram
 	 * expected result: nothing selected
+	 * actual result: passed
 	 */
 	@Test	
 	public void test1() {
@@ -169,7 +170,7 @@ public class AutoSelectMandatoryFeaturesTest {
 		while (itElement.hasNext()) {
 			IntentionalElement element = (IntentionalElement) itElement.next();
 			if (element instanceof Feature) {
-				assertFalse(FeatureUtil.checkSelectionStatus((Feature) element, true));
+				assertNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
 			}
 		}
 	}
@@ -177,8 +178,12 @@ public class AutoSelectMandatoryFeaturesTest {
 	/*
 	 * test case with a non-feature intentional element
 	 * expected result:
-	 * - selected elements: root, child
-	 * - not selected element: belief
+	 * - metadata added for: child
+	 * - metadata not added for: root
+	 * - non-feature element: belief
+	 * actual result: passed
+	 * - metadata added for: child
+	 * - metadata not added for: root
 	 */
 	@Test
 	public void test2() {
@@ -202,7 +207,7 @@ public class AutoSelectMandatoryFeaturesTest {
 		
 		strategy.setGrlspec(urnspec.getGrlspec());
 		
-		List<Feature> features = strategy.getGrlspec().getIntElements();
+		List<IntentionalElement> features = strategy.getGrlspec().getIntElements();
 		Iterator it = features.iterator();
 		while (it.hasNext()) {
 			IntentionalElement element = (IntentionalElement) it.next();
@@ -227,10 +232,13 @@ public class AutoSelectMandatoryFeaturesTest {
 		Iterator itElement = features.iterator();
 		while (itElement.hasNext()) {
 			IntentionalElement element = (IntentionalElement) itElement.next();
-			if (element instanceof Feature) {
-				assertTrue(FeatureUtil.checkSelectionStatus((Feature) element, true));
-			} else {
+			if (element instanceof Feature && !element.getName().equals("root")) {
+				assertNotNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
+			} else if (element instanceof Belief) {
+				assertNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
 				assertEquals(element.getDescription(), "non-Feature");
+			} else {
+				assertNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
 			}
 		}
 	}
@@ -238,8 +246,12 @@ public class AutoSelectMandatoryFeaturesTest {
 	/*
 	 * test case with various decompositions and multiple root features
 	 * expected result:
-	 *  - selected features: root1, child1Root1, Xor2, child2Root1, And1, And2, child1Root2, Or3
-	 *  - not selected features: Xor1, Or1, Or2, child2Root2, Optional1, Optional2
+	 *  - metadata added for: child1Root1, child2Root1, And1, And2, child1Root2, OrChild1
+	 *  - metada not added for: Xor1, Or1, Or2, child2Root2, Optional1, Optional2
+	 *  actual result: failed
+	 *  - metadata added for: child1Root1, child2Root1, And1, And2, child1Root2
+	 *  - metada not added for: Xor1, Or1, Or2, child2Root2, Optional1, Optional2
+	 *  - bug: OrChild1 metadata not added
 	 */
 	@Test
 	public void test3() {
@@ -253,6 +265,7 @@ public class AutoSelectMandatoryFeaturesTest {
 		int evalResult;
 		GrlFactory factory = GrlFactoryImpl.init();
 		HashMap eval = new HashMap();
+		List<EvaluationStrategy> strategies = urnspec.getGrlspec().getStrategies();
 		strategy = factory.createEvaluationStrategy();
 		EvaluationStrategyManager em = EvaluationStrategyManager.getInstance(editor);
 		
@@ -262,35 +275,40 @@ public class AutoSelectMandatoryFeaturesTest {
 		selected.setEvaluation(100);
 		
 		strategy.setGrlspec(urnspec.getGrlspec());
-		
-		List<Feature> features = strategy.getGrlspec().getIntElements();
+		List<IntentionalElement> features = strategy.getGrlspec().getIntElements();
 		Iterator it = features.iterator();
 		while (it.hasNext()) {
 			IntentionalElement element = (IntentionalElement) it.next();
 			eval.put(element, selected);
-			
+			if(element.getName().equals("Xor2") || element.getName().equals("Or3")) {
+				//manually select Xor2 and Or3
+				MetadataHelper.addMetaData(strategy.getGrlspec().getUrnspec(), element, EvaluationStrategyManager.METADATA_NUMEVAL, Integer.toString(100));
+				assertTrue("Feature " + element.getName() + "needs manual selection", FeatureUtil.checkSelectionStatus((Feature) element, true));
+			}
 		}
-		
 		algo = new FeatureModelStrategyAlgorithm();
 		algo.clearAllAutoSelectedFeatures(strategy);
 		algo.autoSelectAllMandatoryFeatures(strategy);
 		algo.init(strategy, eval);
-		
 		em.setStrategy(strategy);
 		Iterator itElement = features.iterator();
 		while (itElement.hasNext()) {
 			IntentionalElement element = (IntentionalElement) itElement.next();
 			if (element instanceof Feature) {
-				if(((Feature) element).getName().equals("Xor1")
-						|| ((Feature) element).getName().equals("Or1")
-						|| ((Feature) element).getName().equals("Or2")
-						|| ((Feature) element).getName().equals("child2Root2")
-						|| ((Feature) element).getName().equals("Optional1")
-						|| ((Feature) element).getName().equals("Optional2")) {
-					assertFalse(element.getName(), FeatureUtil.checkSelectionStatus((Feature) element, true));
+				if(((Feature) element).getName().equals("root1")
+						^ ((Feature) element).getName().equals("root2")
+						^ ((Feature) element).getName().equals("Xor1")
+						^ ((Feature) element).getName().equals("Xor2")
+						^ ((Feature) element).getName().equals("Or1")
+						^ ((Feature) element).getName().equals("Or2")
+						^ ((Feature) element).getName().equals("Or3")
+						^ ((Feature) element).getName().equals("child2Root2")
+						^ ((Feature) element).getName().equals("Optional1")
+						^ ((Feature) element).getName().equals("Optional2")) {
+					assertNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
 				}
 				else {
-					assertTrue(element.getName(), FeatureUtil.checkSelectionStatus((Feature) element, true));
+					assertNotNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
 				}
 			}
 		}

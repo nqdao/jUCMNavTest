@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Quang" created="November 18, 2014 12:22:42 AM EST" modified="November 18, 2014 4:13:13 PM EST" specVersion="46" urnVersion="1.27" nextGlobalID="204">
+  <ucmspec>
+    <scenarioGroups name="ScenarioGroup5" id="5">
+      <scenarios name="ScenarioDef6" id="6"/>
+    </scenarioGroups>
+  </ucmspec>
+  <grlspec>
+    <intElements xsi:type="fm:Feature" name="root" id="11" linksDest="158" type="Task" refs="12">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="child" id="150" linksSrc="158" type="Task" refs="151">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+      <metadata name="_autoSelected" value="20141118-161313668"/>
+    </intElements>
+    <links xsi:type="fm:MandatoryFMLink" name="Mandatory158" id="158" refs="//@urndef/@specDiagrams.0/@connections.1" dest="11" src="150" quantitativeContribution="100"/>
+    <groups name="StrategiesGroup3" id="3" strategies="4"/>
+    <strategies name="EvaluationStrategy4" id="4" author="Quang" group="3"/>
+    <strategies name="EvaluationStrategy42" id="42"/>
+    <strategies name="EvaluationStrategy67" id="67"/>
+    <strategies name="EvaluationStrategy70" id="70"/>
+    <strategies name="EvaluationStrategy73" id="73"/>
+    <strategies name="EvaluationStrategy76" id="76"/>
+    <strategies name="EvaluationStrategy79" id="79"/>
+    <strategies name="EvaluationStrategy184" id="184"/>
+    <strategies name="EvaluationStrategy187" id="187"/>
+    <strategies name="EvaluationStrategy190" id="190"/>
+    <strategies name="EvaluationStrategy193" id="193"/>
+    <strategies name="EvaluationStrategy196" id="196"/>
+    <strategies name="EvaluationStrategy199" id="199"/>
+    <strategies name="EvaluationStrategy202" id="202"/>
+    <strategies/>
+    <impactModel/>
+    <indicatorGroup name="Time" id="7" isRedesignCategory="true"/>
+    <indicatorGroup name="Cost" id="8" isRedesignCategory="true"/>
+    <indicatorGroup name="Quality" id="9" isRedesignCategory="true"/>
+    <indicatorGroup name="Flexibility" id="10" isRedesignCategory="true"/>
+    <featureModel/>
+  </grlspec>
+  <urndef>
+    <specDiagrams xsi:type="fm:FeatureDiagram" name="FeatureDiagram2" id="2">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef12" id="12" x="434" y="74" pred="//@urndef/@specDiagrams.0/@connections.0 //@urndef/@specDiagrams.0/@connections.1" def="11">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:Belief" name="Belief124" id="124" description="non-Feature" x="247" y="171" succ="//@urndef/@specDiagrams.0/@connections.0" author="Quang">
+        <metadata name="_width" value="110"/>
+        <metadata name="_height" value="45"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef151" id="151" x="487" y="194" succ="//@urndef/@specDiagrams.0/@connections.1" def="150">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <connections xsi:type="grl:BeliefLink" source="124" target="12"/>
+      <connections xsi:type="grl:LinkRef" source="151" target="12" link="158">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+    </specDiagrams>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph41" id="41"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph66" id="66"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph69" id="69"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph72" id="72"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph75" id="75"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph78" id="78"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph183" id="183"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph186" id="186"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph189" id="189"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph192" id="192"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph195" id="195"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph198" id="198"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph201" id="201"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph204" id="204"/>
+  </urndef>
+  <metadata name="_Use0to100EvaluationRange" value="false"/>
+</urn:URNspec>

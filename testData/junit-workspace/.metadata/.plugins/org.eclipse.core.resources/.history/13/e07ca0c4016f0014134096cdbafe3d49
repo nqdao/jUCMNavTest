@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Quang" created="November 17, 2014 1:09:24 AM EST" modified="November 18, 2014 4:03:31 AM EST" specVersion="44" urnVersion="1.27" nextGlobalID="59">
+  <ucmspec>
+    <scenarioGroups name="ScenarioGroup5" id="5">
+      <scenarios name="ScenarioDef6" id="6"/>
+    </scenarioGroups>
+  </ucmspec>
+  <grlspec>
+    <groups name="StrategiesGroup3" id="3" strategies="4"/>
+    <strategies name="EvaluationStrategy4" id="4" author="Quang" group="3"/>
+    <strategies name="EvaluationStrategy23" id="23"/>
+    <strategies name="EvaluationStrategy30" id="30"/>
+    <strategies name="EvaluationStrategy33" id="33"/>
+    <strategies name="EvaluationStrategy36" id="36"/>
+    <strategies name="EvaluationStrategy39" id="39"/>
+    <strategies name="EvaluationStrategy42" id="42"/>
+    <strategies name="EvaluationStrategy45" id="45"/>
+    <strategies name="EvaluationStrategy48" id="48"/>
+    <strategies name="EvaluationStrategy51" id="51"/>
+    <strategies name="EvaluationStrategy54" id="54"/>
+    <strategies name="EvaluationStrategy57" id="57"/>
+    <strategies/>
+    <impactModel/>
+    <indicatorGroup name="Time" id="7" isRedesignCategory="true"/>
+    <indicatorGroup name="Cost" id="8" isRedesignCategory="true"/>
+    <indicatorGroup name="Quality" id="9" isRedesignCategory="true"/>
+    <indicatorGroup name="Flexibility" id="10" isRedesignCategory="true"/>
+    <featureModel/>
+  </grlspec>
+  <urndef>
+    <specDiagrams xsi:type="fm:FeatureDiagram" name="FeatureDiagram2" id="2"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph22" id="22"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph25" id="25"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph27" id="27"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph29" id="29"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph32" id="32"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph35" id="35"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph38" id="38"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph41" id="41"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph44" id="44"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph47" id="47"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph50" id="50"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph53" id="53"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph56" id="56"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph59" id="59"/>
+  </urndef>
+  <metadata name="_Use0to100EvaluationRange" value="false"/>
+</urn:URNspec>
