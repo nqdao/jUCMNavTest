@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Quang" created="November 18, 2014 12:22:42 AM EST" modified="November 19, 2014 11:42:05 PM EST" specVersion="88" urnVersion="1.27" nextGlobalID="243">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Quang" created="November 18, 2014 12:22:42 AM EST" modified="November 20, 2014 5:13:19 PM EST" specVersion="90" urnVersion="1.27" nextGlobalID="245">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup5" id="5">
       <scenarios name="ScenarioDef6" id="6"/>
@@ -38,7 +38,7 @@
     <strategies name="EvaluationStrategy235" id="235"/>
     <strategies name="EvaluationStrategy238" id="238"/>
     <strategies name="EvaluationStrategy241" id="241"/>
-    <strategies/>
+    <strategies name="EvaluationStrategy244" id="244"/>
     <impactModel/>
     <indicatorGroup name="Time" id="7" isRedesignCategory="true"/>
     <indicatorGroup name="Cost" id="8" isRedesignCategory="true"/>
@@ -52,7 +52,7 @@
         <metadata name="_height" value="45"/>
         <metadata name="_width" value="110"/>
       </nodes>
-      <nodes xsi:type="grl:Belief" name="Belief124" id="124" description="non-Feature" x="284" y="154" succ="//@urndef/@specDiagrams.0/@connections.0" author="Quang">
+      <nodes xsi:type="grl:Belief" name="Belief" id="124" description="non-Feature" x="435" y="156" succ="//@urndef/@specDiagrams.0/@connections.0" author="Quang">
         <metadata name="_width" value="110"/>
         <metadata name="_height" value="45"/>
       </nodes>

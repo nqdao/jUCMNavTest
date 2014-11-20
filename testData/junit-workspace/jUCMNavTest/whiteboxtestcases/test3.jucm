@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Quang" created="November 18, 2014 3:56:30 AM EST" modified="November 19, 2014 11:42:07 PM EST" specVersion="64" urnVersion="1.27" nextGlobalID="144">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Quang" created="November 18, 2014 3:56:30 AM EST" modified="November 20, 2014 5:21:27 PM EST" specVersion="65" urnVersion="1.27" nextGlobalID="146">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup5" id="5">
       <scenarios name="ScenarioDef6" id="6"/>
@@ -13,7 +13,7 @@
     <intElements xsi:type="fm:Feature" name="child2Root1" id="31" linksDest="67 68" linksSrc="63" type="Task" refs="32">
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20141119-234207042"/>
+      <metadata name="_autoSelected" value="20141120-172123402"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Or1" id="33" linksSrc="69" type="Task" refs="34">
       <metadata name="_numEval" value="0"/>
@@ -22,11 +22,11 @@
     <intElements xsi:type="fm:Feature" name="And2" id="37" linksSrc="68" type="Task" refs="38">
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20141119-234207042"/>
+      <metadata name="_autoSelected" value="20141120-172123402"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Or2" id="39" linksDest="134" linksSrc="70" type="Task" refs="40">
-      <metadata name="_numEval" value="0"/>
-      <metadata name="_qualEval" value="None"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Optional1" id="41" linksSrc="136" type="Task" refs="42">
       <metadata name="_numEval" value="0"/>
@@ -39,22 +39,22 @@
     <intElements xsi:type="fm:Feature" name="And1" id="47" linksSrc="67" type="Task" refs="48">
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20141119-234207042"/>
+      <metadata name="_autoSelected" value="20141120-172123402"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="child1Root1" id="49" linksSrc="62" type="Task" decompositionType="Xor" refs="50">
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20141119-234207042"/>
+      <metadata name="_autoSelected" value="20141120-172123402"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="child1Root2" id="51" linksDest="69 70" linksSrc="73" type="Task" decompositionType="Or" refs="52">
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20141119-234207042"/>
-      <metadata name="_userSetEvaluationWarning" value="100 != 0"/>
+      <metadata name="_autoSelected" value="20141120-172123402"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="OrChild1" id="122" linksSrc="134" type="Task" refs="123">
-      <metadata name="_numEval" value="0"/>
-      <metadata name="_qualEval" value="None"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+      <metadata name="_autoSelected" value="20141120-172123402"/>
     </intElements>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory62" id="62" refs="//@urndef/@specDiagrams.0/@connections.0" dest="27" src="49" quantitativeContribution="50"/>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory63" id="63" refs="//@urndef/@specDiagrams.0/@connections.1" dest="27" src="31" quantitativeContribution="50"/>
@@ -66,7 +66,11 @@
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory134" id="134" refs="//@urndef/@specDiagrams.0/@connections.7" dest="39" src="122" quantitativeContribution="100"/>
     <links xsi:type="fm:OptionalFMLink" name="Optional136" id="136" refs="//@urndef/@specDiagrams.0/@connections.8" dest="43" src="41" quantitativeContribution="0"/>
     <groups name="StrategiesGroup3" id="3" strategies="4"/>
-    <strategies name="EvaluationStrategy4" id="4" author="Quang" group="3"/>
+    <strategies name="EvaluationStrategy4" id="4" author="Quang" group="3">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="39">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
     <strategies name="EvaluationStrategy83" id="83"/>
     <strategies name="EvaluationStrategy86" id="86"/>
     <strategies name="EvaluationStrategy89" id="89"/>
@@ -83,7 +87,7 @@
     <strategies name="EvaluationStrategy132" id="132"/>
     <strategies name="EvaluationStrategy139" id="139"/>
     <strategies name="EvaluationStrategy142" id="142"/>
-    <strategies/>
+    <strategies name="EvaluationStrategy145" id="145"/>
     <impactModel/>
     <indicatorGroup name="Time" id="7" isRedesignCategory="true"/>
     <indicatorGroup name="Cost" id="8" isRedesignCategory="true"/>
@@ -93,7 +97,7 @@
   </grlspec>
   <urndef>
     <specDiagrams xsi:type="fm:FeatureDiagram" name="FeatureDiagram2" id="2">
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef28" id="28" x="154" y="13" pred="//@urndef/@specDiagrams.0/@connections.0 //@urndef/@specDiagrams.0/@connections.1" def="27">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef28" id="28" x="154" y="21" pred="//@urndef/@specDiagrams.0/@connections.0 //@urndef/@specDiagrams.0/@connections.1" def="27">
         <metadata name="_height" value="45"/>
         <metadata name="_width" value="110"/>
       </nodes>
