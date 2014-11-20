@@ -130,7 +130,7 @@ public class AutoSelectMandatoryFeaturesTest {
 	 */
 	@Test	
 	public void test1() {
-		String testFile = "test1.jucm";
+		String testFile = "/whiteboxtestcases/test1.jucm";
 		try {
 			setUpTest(testFile);
 		} catch (Exception e) {
@@ -187,7 +187,7 @@ public class AutoSelectMandatoryFeaturesTest {
 	 */
 	@Test
 	public void test2() {
-		String testFile = "test2.jucm";
+		String testFile = "/whiteboxtestcases/test2.jucm";
 		try {
 			setUpTest(testFile);
 		} catch (Exception e) {
@@ -232,13 +232,11 @@ public class AutoSelectMandatoryFeaturesTest {
 		Iterator itElement = features.iterator();
 		while (itElement.hasNext()) {
 			IntentionalElement element = (IntentionalElement) itElement.next();
-			if (element instanceof Feature && !element.getName().equals("root")) {
-				assertNotNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
-			} else if (element instanceof Belief) {
+			if (element instanceof Feature) {
 				assertNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
-				assertEquals(element.getDescription(), "non-Feature");
 			} else {
 				assertNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
+				assertEquals(element.getDescription(), "non-Feature");
 			}
 		}
 	}
@@ -255,7 +253,7 @@ public class AutoSelectMandatoryFeaturesTest {
 	 */
 	@Test
 	public void test3() {
-		String testFile = "test3.jucm";
+		String testFile = "/whiteboxtestcases/test3.jucm";
 		try {
 			setUpTest(testFile);
 		} catch (Exception e) {
@@ -280,7 +278,7 @@ public class AutoSelectMandatoryFeaturesTest {
 		while (it.hasNext()) {
 			IntentionalElement element = (IntentionalElement) it.next();
 			eval.put(element, selected);
-			if(element.getName().equals("Xor2") || element.getName().equals("Or3")) {
+			if(element.getName().equals("Or2")) {
 				//manually select Xor2 and Or3
 				MetadataHelper.addMetaData(strategy.getGrlspec().getUrnspec(), element, EvaluationStrategyManager.METADATA_NUMEVAL, Integer.toString(100));
 				assertTrue("Feature " + element.getName() + "needs manual selection", FeatureUtil.checkSelectionStatus((Feature) element, true));
@@ -297,14 +295,9 @@ public class AutoSelectMandatoryFeaturesTest {
 			if (element instanceof Feature) {
 				if(((Feature) element).getName().equals("root1")
 						^ ((Feature) element).getName().equals("root2")
-						^ ((Feature) element).getName().equals("Xor1")
-						^ ((Feature) element).getName().equals("Xor2")
 						^ ((Feature) element).getName().equals("Or1")
 						^ ((Feature) element).getName().equals("Or2")
-						^ ((Feature) element).getName().equals("Or3")
-						^ ((Feature) element).getName().equals("child2Root2")
-						^ ((Feature) element).getName().equals("Optional1")
-						^ ((Feature) element).getName().equals("Optional2")) {
+						^ ((Feature) element).getName().equals("Optional1")) {
 					assertNull(element.getName(), MetadataHelper.getMetaData(element, FeatureModelStrategyAlgorithm.METADATA_AUTO_SELECTED));
 				}
 				else {
