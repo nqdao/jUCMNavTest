@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Omar" created="November 12, 2014 10:21:14 PM EST" modified="November 18, 2014 12:32:53 AM EST" specVersion="164" urnVersion="1.27" nextGlobalID="189">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Omar" created="November 12, 2014 10:21:14 PM EST" modified="November 19, 2014 7:57:19 PM EST" specVersion="227" urnVersion="1.27" nextGlobalID="252">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup6" id="6">
       <scenarios name="ScenarioDef7" id="7"/>
@@ -85,6 +85,27 @@
     <strategies name="EvaluationStrategy181" id="181"/>
     <strategies name="EvaluationStrategy184" id="184"/>
     <strategies name="EvaluationStrategy187" id="187"/>
+    <strategies name="EvaluationStrategy190" id="190"/>
+    <strategies name="EvaluationStrategy193" id="193"/>
+    <strategies name="EvaluationStrategy196" id="196"/>
+    <strategies name="EvaluationStrategy199" id="199"/>
+    <strategies name="EvaluationStrategy202" id="202"/>
+    <strategies name="EvaluationStrategy205" id="205"/>
+    <strategies name="EvaluationStrategy208" id="208"/>
+    <strategies name="EvaluationStrategy211" id="211"/>
+    <strategies name="EvaluationStrategy214" id="214"/>
+    <strategies name="EvaluationStrategy217" id="217"/>
+    <strategies name="EvaluationStrategy220" id="220"/>
+    <strategies name="EvaluationStrategy223" id="223"/>
+    <strategies name="EvaluationStrategy226" id="226"/>
+    <strategies name="EvaluationStrategy229" id="229"/>
+    <strategies name="EvaluationStrategy232" id="232"/>
+    <strategies name="EvaluationStrategy235" id="235"/>
+    <strategies name="EvaluationStrategy238" id="238"/>
+    <strategies name="EvaluationStrategy241" id="241"/>
+    <strategies name="EvaluationStrategy244" id="244"/>
+    <strategies name="EvaluationStrategy247" id="247"/>
+    <strategies name="EvaluationStrategy250" id="250"/>
     <strategies/>
     <impactModel/>
     <indicatorGroup name="Time" id="8" isRedesignCategory="true"/>
@@ -183,6 +204,27 @@
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph183" id="183"/>
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph186" id="186"/>
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph189" id="189"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph192" id="192"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph195" id="195"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph198" id="198"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph201" id="201"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph204" id="204"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph207" id="207"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph210" id="210"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph213" id="213"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph216" id="216"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph219" id="219"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph222" id="222"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph225" id="225"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph228" id="228"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph231" id="231"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph234" id="234"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph237" id="237"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph240" id="240"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph243" id="243"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph246" id="246"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph249" id="249"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph252" id="252"/>
   </urndef>
   <metadata name="_Use0to100EvaluationRange" value="false"/>
 </urn:URNspec>

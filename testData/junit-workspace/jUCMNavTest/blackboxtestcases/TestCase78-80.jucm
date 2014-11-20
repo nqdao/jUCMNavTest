@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Omar" created="November 15, 2014 4:21:28 PM EST" modified="November 18, 2014 12:33:46 AM EST" specVersion="68" urnVersion="1.27" nextGlobalID="105">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="Omar" created="November 15, 2014 4:21:28 PM EST" modified="November 19, 2014 7:58:29 PM EST" specVersion="131" urnVersion="1.27" nextGlobalID="168">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup5" id="5">
       <scenarios name="ScenarioDef6" id="6"/>
@@ -13,22 +13,22 @@
     <intElements xsi:type="fm:Feature" name="Mandatory3" id="25" linksSrc="36" type="Task" refs="26">
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20141118-003346355"/>
+      <metadata name="_autoSelected" value="20141119-195829725"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Mandatory1" id="27" linksDest="36 37" linksSrc="34" type="Task" refs="28">
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20141118-003346355"/>
+      <metadata name="_autoSelected" value="20141119-195829725"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="MO1" id="29" linksSrc="37 40" type="Task" refs="30">
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20141118-003346355"/>
+      <metadata name="_autoSelected" value="20141119-195829725"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Mandatory2" id="31" linksDest="40" linksSrc="35" type="Task" refs="32">
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20141118-003346355"/>
+      <metadata name="_autoSelected" value="20141119-195829725"/>
     </intElements>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory34" id="34" refs="//@urndef/@specDiagrams.0/@connections.0" dest="23" src="27" quantitativeContribution="50"/>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory35" id="35" refs="//@urndef/@specDiagrams.0/@connections.1" dest="23" src="31" quantitativeContribution="50"/>
@@ -58,6 +58,27 @@
     <strategies name="EvaluationStrategy97" id="97"/>
     <strategies name="EvaluationStrategy100" id="100"/>
     <strategies name="EvaluationStrategy103" id="103"/>
+    <strategies name="EvaluationStrategy106" id="106"/>
+    <strategies name="EvaluationStrategy109" id="109"/>
+    <strategies name="EvaluationStrategy112" id="112"/>
+    <strategies name="EvaluationStrategy115" id="115"/>
+    <strategies name="EvaluationStrategy118" id="118"/>
+    <strategies name="EvaluationStrategy121" id="121"/>
+    <strategies name="EvaluationStrategy124" id="124"/>
+    <strategies name="EvaluationStrategy127" id="127"/>
+    <strategies name="EvaluationStrategy130" id="130"/>
+    <strategies name="EvaluationStrategy133" id="133"/>
+    <strategies name="EvaluationStrategy136" id="136"/>
+    <strategies name="EvaluationStrategy139" id="139"/>
+    <strategies name="EvaluationStrategy142" id="142"/>
+    <strategies name="EvaluationStrategy145" id="145"/>
+    <strategies name="EvaluationStrategy148" id="148"/>
+    <strategies name="EvaluationStrategy151" id="151"/>
+    <strategies name="EvaluationStrategy154" id="154"/>
+    <strategies name="EvaluationStrategy157" id="157"/>
+    <strategies name="EvaluationStrategy160" id="160"/>
+    <strategies name="EvaluationStrategy163" id="163"/>
+    <strategies name="EvaluationStrategy166" id="166"/>
     <strategies/>
     <impactModel/>
     <indicatorGroup name="Time" id="7" isRedesignCategory="true"/>
@@ -126,6 +147,27 @@
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph99" id="99"/>
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph102" id="102"/>
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph105" id="105"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph108" id="108"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph111" id="111"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph114" id="114"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph117" id="117"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph120" id="120"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph123" id="123"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph126" id="126"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph129" id="129"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph132" id="132"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph135" id="135"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph138" id="138"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph141" id="141"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph144" id="144"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph147" id="147"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph150" id="150"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph153" id="153"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph156" id="156"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph159" id="159"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph162" id="162"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph165" id="165"/>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph168" id="168"/>
   </urndef>
   <metadata name="_Use0to100EvaluationRange" value="false"/>
 </urn:URNspec>
