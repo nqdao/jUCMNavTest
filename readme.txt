@@ -1,5 +1,5 @@
 To load the jucm files for junit testing, find where your junit plugin test is creating the junit-workspace folder. Copy
-the junit-workspace folder content in the submission into your local junit-workspace folder.
+the testData/junit-workspace folder content in the submission into your local junit-workspace folder.
 
 Set launch configuration to not clear the workspace before running:
 - uncheck "Clear" in the Main tab
